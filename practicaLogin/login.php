@@ -25,8 +25,8 @@
 
         <label for="rol">Rol:</label>
         <select id="rol" name="rol">
-            <option value="alumnat" >Alumnat</option>
-            <option value="professorat" >Professorat</option>
+            <option value="alumnat"  id="alumnat" name="alumnat">Alumnat</option>
+            <option value="professorat"  id= "professorat" name="professorat" >Professorat</option>
         </select><br><br>
 
         <label for="active">Estado:</label>
@@ -37,6 +37,9 @@
 
         <input type="submit" value="Enviar">
     </form>    
+    <p>
+        <a href="inicio.php">Ya tengo cuenta</a>
+    </p>
 
 </body>
 </html>
