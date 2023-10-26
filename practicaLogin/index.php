@@ -1,6 +1,9 @@
 <?php
 session_start();   
 include "dbConf.php"; 
+if  ($_SESSION["loggedIn"] == false){
+    header('location: inicio.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +52,7 @@ if ($_SESSION["rol"] == "professorat") {
 } 
 ?>
 
-
+<br/>
 <a href="http://localhost/M07_login/practicaLogin/mostrarInfo.php?user_id=<?php echo $_SESSION['user_id']; ?>">Mostrar información</a>
 <a href="disconect.php">Desconectar</a>
 

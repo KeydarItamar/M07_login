@@ -1,6 +1,9 @@
 <?php
 session_start();
 include('dbConf.php');
+if  ($_SESSION["loggedIn"] == false){
+    header('location: inicio.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +27,10 @@ include('dbConf.php');
 
             $datos_usuario = mysqli_query($conex,$select_name);
             mysqli_num_rows($datos_usuario);
-            $dato=mysqli_fetch_array($datos_usuario);
+
+            $dato= mysqli_fetch_array($datos_usuario);
             
-            
+        
             if(!$conex){
                 echo "Error de connexio: " . mysqli_connect_error();
             }else{
@@ -40,6 +44,7 @@ include('dbConf.php');
             }
             mysqli_close($conex);
     ?>
+    <br/>
     <a href="index.php">TORNAR</a>
 
 </body>

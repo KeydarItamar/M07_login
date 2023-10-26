@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('dbConf.php');
+include "dbConf.php";
 
 
 $PASSWORD= $_POST['contraseña'];
@@ -18,7 +18,7 @@ try {
         echo "Error de conexión: " . mysqli_connect_error();
     } else {
         if ($datos_usuario && mysqli_num_rows($datos_usuario) > 0) {
-             $_SESSION["loggedIn"] = true;
+            $_SESSION["loggedIn"] = true;
             $_SESSION["nombre"]= $dato["name"];
             $_SESSION["rol"]= $dato["rol"];
             $_SESSION["user_id"]=$dato["user_id"];
@@ -38,15 +38,3 @@ try {
 }
 
 ?>
-
-
-<!-- 
-// foreach ($datos_usuario as $i => $dato) {
-            //     echo "El teu rol es  : ". $dato["rol"]; 
-            //     echo "<br>";
-            //     echo "El teu nom es: " . $dato["name"];
-            //     echo "<br>";
-            //     echo "El teu cognom es  : ". $dato["surname"]; 
-            //     echo "<br>";
-            //     echo "El teu email es  : ". $dato["email"]; 
-            //     echo "<br>"; -->
