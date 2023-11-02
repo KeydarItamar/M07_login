@@ -5,6 +5,7 @@ include "dbConf.php";
 
 $PASSWORD= $_POST['contraseña'];
 $EMAIL= $_POST['email'];
+$IDIOMA= $_POST['idioma'];
 
 $conex = mysqli_connect(DBHOST,DBUSER,PSSW,DBNAME);
 

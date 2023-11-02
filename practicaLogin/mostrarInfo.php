@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('dbConf.php');
+include 'dbConf.php';
 if  ($_SESSION["loggedIn"] == false){
     header('location: inicio.php');
 }
@@ -16,7 +16,19 @@ if  ($_SESSION["loggedIn"] == false){
 <body>
     <h1>
     <?php
-        echo "Información detallada del usuario"
+    if(isset($_COOKIE["idioma"])){
+            if($_COOKIE["idioma"]=="Es"){
+                echo "Información detallada del usuario";
+            }else if($_COOKIE["idioma"]== "Cat"){
+                echo "Informació en detall del usuari";
+            }else if($_COOKIE["idioma"]=="En"){
+                echo "User information details";
+            }else{
+                echo "Información detallada del usuario";
+            }
+        }else{
+        echo "Información detallada del usuario";
+        }
     ?>
     </h1>
     <?php 
@@ -45,7 +57,33 @@ if  ($_SESSION["loggedIn"] == false){
             mysqli_close($conex);
     ?>
     <br/>
-    <a href="index.php">TORNAR</a>
+
+    <?php
+
+if(isset($_COOKIE["idioma"])){
+if ($_COOKIE["idioma"]=="Es"){
+        ?>
+        <a href="index.php">VOLVER</a>
+
+    <?php
+    }else if($_COOKIE["idioma"]=="Cat"){
+        ?>
+      
+      <a href="index.php">TORNAR</a>
+
+        <?php
+    }else if($_COOKIE["idioma"]=="En"){
+        ?>
+    <a href="index.php">RETURN</a>
+
+        <?php
+    }
+}else{
+    ?>
+    <a href="index.php">VOLVER</a>
+    <?php
+}
+    ?>
 
 </body>
 </html>

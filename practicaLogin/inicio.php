@@ -28,6 +28,8 @@ session_start();
         <button type="submit" name="envia">Enviar</button>
     </p>
     </form>
+
+
     <a href="login.php">Crea usuari</a>
     
 </body>
